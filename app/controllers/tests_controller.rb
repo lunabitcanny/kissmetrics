@@ -1,6 +1,11 @@
 class TestsController < ApplicationController
-  def index
-    KMTS.record('bob@bob.com', 'Viewed My Test')
-    render :json => "I am in Test Controller"
+  def sign_in
+    session[:email] = 'luna@bitcanny.com'
+    render :json => 'I am in Signed In'
+  end
+
+  def visit
+    session[:email] = 'anonymous'
+    render :json => 'I am anonymous'
   end
 end
