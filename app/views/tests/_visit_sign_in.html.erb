@@ -1,12 +1,11 @@
-<script>
-  _kmq.push(function() {
-    alert(KM.i()); // Display an alert box with your current KM identity
-  });
-</script>
 <%= "#{session[:email]} visited" %>
 <% if session[:email] %>
   <script>
     _kmq.push(['identify', '<%= session[:email] %>']);
+
+    _kmq.push(function() {
+      alert(KM.i()); // Display an alert box with your current KM identity
+    });
     //_kmq.push(['alias', 'luna@bitcanny.com']);
     //_kmq.push(['identify', 'luna@bitcanny.com']);
     _kmq.push(['record', 'site-visited']);
