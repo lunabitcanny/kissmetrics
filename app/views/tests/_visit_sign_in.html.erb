@@ -1,0 +1,7 @@
+<%= "#{session[:email]} visited" %>
+<% if session[:email] %>
+  <script>
+    _kmq.push(['identify', '<%= session[:email] %>']);
+    _kmq.push(['record', 'site-visited']);
+  </script>
+<% end %>
